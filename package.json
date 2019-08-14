@@ -1,27 +1,35 @@
 {
   "name": "weather-app",
   "version": "1.0.0",
-  "description": "weather-app",
-  "main": "./src/index.js",
+  "description": "",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack-dev-server --mode development --watch",
+    "build": "webpack --mode production",
+    "start": "node src/index.js",
+    "lint": "eslint src/ --fix"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/IrochkaZ/weather-app.git"
-  },
-  "author": "Irina Zaletko",
+  "author": "Zaletko  Irushish",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/IrochkaZ/weather-app/issues"
-  },
-  "homepage": "https://github.com/IrochkaZ/weather-app#readme",
   "devDependencies": {
-    "eslint": "^3.19.0",
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "babel-loader": "^8.0.5",
+    "cli-engine": "^4.7.6",
+    "css-loader": "^2.1.1",
+    "eslint": "^6.1.0",
     "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-config-standard": "^13.0.1",
-    "eslint-plugin-import": "^1.16.0",
-    "eslint-plugin-node": "^9.1.0",
-    "eslint-plugin-promise": "^4.2.1",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-import": "^2.18.2",
+    "file-loader": "^3.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^4.6.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.3.1"
+  },
+  "dependencies": {
+    "jquery": "^3.4.1"
   }
 }
