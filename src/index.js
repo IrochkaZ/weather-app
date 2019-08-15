@@ -1,7 +1,8 @@
-import { toClassCheck } from './toClassCheck';
+// import { toClassCheck } from './toClassCheck';
+const toClassCheck = require('./toClassCheck');
+
 import $ from 'jquery';
-window.jQuery = $;
-window.$ = $;
+import './main.css';
 
 const main = $('main');
 const button = $('#button');

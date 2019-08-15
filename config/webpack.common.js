@@ -1,5 +1,5 @@
-const path = require('path');
 const webpack = require('webpack');
+const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -43,7 +43,7 @@ module.exports = {
       filename: 'index.html',
       template: 'src/index.html',
       meta: {
-          viewport: 'width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.85',
+        viewport: 'width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.85',
     },
   })],
 };

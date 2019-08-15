@@ -1,4 +1,3 @@
-
-export function toClassCheck(someData) {
-    return someData.replace(' ', '_').replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '').toLowerCase();
+module.export = function toClassCheck(someData) {
+  return someData.replace(' ', '_').replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '').toLowerCase();
 }
