@@ -1,5 +1,8 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 
 module.exports = {
   entry: './src/index.js',
@@ -10,17 +13,18 @@ module.exports = {
   devtool: 'source-map',
   module: {
     rules: [
-      { enforce: 'pre', test: /\.js$/, loader: 'eslint-loader' },
+      { enforce: 'pre', test: /\.js$/, exclude: /node_modules/,loader: 'eslint-loader'},
       {
         test: /\.js$/,
         exclude: /(node_modules)/,
-        use: {
-          loader: 'babel-loader',
-        },
       },
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.txt$/i,
+        use: 'raw-loader',
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
@@ -29,17 +33,34 @@ module.exports = {
           {
             loader: 'image-webpack-loader',
             options: {
-              bypassOnDebug: true, // webpack@1.x
-              disable: true, // webpack@2.x and newer
+              bypassOnDebug: true,
+              disable: true,
             },
+          },
+        ],
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: [
+          {
+            loader: 'file-loader',
           },
         ],
       },
     ],
   },
-  plugins: [new HtmlWebpackPlugin({
-    meta: {
-      viewport: 'width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.85',
-    },
-  })],
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    }),
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'Weather App',
+      filename: 'index.html',
+      template: 'src/index.html',
+      meta: {
+        viewport: 'width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.85',
+      },
+    })],
 };

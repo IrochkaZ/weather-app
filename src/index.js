@@ -1,9 +1,7 @@
-//es5
-//const toClassCheck = require('./toClassCheck');
-
-//es6
 import { toClassCheck } from './toClassCheck';
-const $ = require('jquery');
+import $ from 'jquery';
+window.jQuery = $;
+window.$ = $;
 
 const main = $('main');
 const button = $('#button');
@@ -102,7 +100,6 @@ $("#button").click(() => {
 buttonMyWeather.click(() => {
   getLocation();
 });
-
 
 buttonClear.click(() => {
   clearDataTable();

@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+body {
+    background: linear-gradient(90deg, #7474BF 10%, #348AC7 90%);
+    font-family: 'Roboto', sans-serif;
+}
+.my_and_clear_button {
+    border-bottom: solid 1px #4b62e3;
+    padding-bottom: 10px;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+main{
+	width: 500px;
+    margin: 100px auto;
+    background-color: azure;
+    border-radius: 5px;
+    padding: 10px;
+}
+form{
+    display: flex;
+    justify-content: center;
+}
+.text{
+    line-height: normal;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-style: italic;
+    color: #4b62e3;
+    padding: 10px;
+}
+#output{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+}
+button {
+    padding: 10px 20px;
+    font-weight: bold;
+    border:none;
+    padding: 5px 17px;
+    color: #ffff;
+    /* border: 2px solid #103642; */
+    border-radius: 2px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    }
+
+button:hover {
+    background-color: #000000;
+    }
+
+#search_button{
+    width: 100px;
+    background-color: #f0c810;
+}
+
+
+#weather_Search{
+    font-weight: 400;
+    color: #4d58d1;
+    font-size: 18px;
+    margin: 0 5px;
+    font-style: italic;
+    padding: 10px;
+    border-radius: 5px;
+}
+#my_weather{
+    background-color: #f0103a;
+}
+#clear_button{
+    background-color: #f28c08;
+}
+.table_weather {
+    display: flex;
+    flex-flow: column;
+}
+.tableHead{
+    background-color: cornflowerblue;
+    text-align: center;
+}
+
+.tableHead, .tRow {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+}
+
+.tRow {
+    display: flex;
+    background-color: #c9d4ef;
+}
+
+.tableHead > div, .tRow > div, .tRow > img{
+    padding: 10px;
+    border: 1px solid;
+    width: 100%;
+    text-align: center;
+}
+
+.condition > img{
+    width:50px;
+}
